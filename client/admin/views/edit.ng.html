@@ -1,0 +1,36 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h2 class="page-header">修改系统</h2>
+        <form>
+        <div class="form-group">
+            <label>系统名称</label>
+            <input ng-model="ec.node.name" class="form-control"></div>
+        <div class="form-group">
+            <label>ip地址</label>
+            <input ng-model="ec.node.ip" class="form-control"></div>
+        <div class="form-group">
+            <label>负责人</label>
+            <input ng-model="ec.node.manager" class="form-control"></div>
+        <div class="form-group">
+            <label>联系电话</label>
+            <input ng-model="ec.node.tel" class="form-control"></div>
+        <div class="form-group">
+            <label>简介</label>
+            <textarea ng-model="ec.node.description" class="form-control" rows="6"></textarea>
+        </div>
+        <div ng-show="ec.isedit==99" class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button> <strong>提示：</strong>
+            更新成功！
+        </div>
+        <button class="btn btn-danger" ng-click="ec.edit()">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            确认修改
+        </button>
+        <a ui-sref="root.admin" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            取消修改
+        </a>
+        </form>
+
+</div>

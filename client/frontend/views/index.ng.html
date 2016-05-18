@@ -1,0 +1,38 @@
+<br><br><br><br><br>
+
+<div class="container">
+  <div class="col-md-5" style="padding-left: 0px">
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+      <input type="search" ng-model="nodesList.searchText" class="form-control" placeholder="请输入系统名称或ip地址进行查找" aria-describedby="sizing-addon2">
+    </div>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>系统名称</th>
+          <th>ip地址</th>
+          <th>负责人</th>
+          <th>联系电话</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="node in nodesList.nodes">
+          <th scope="row">{{ (paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1 }}</th>
+          <td>{{ node.name }}</td>
+          <td>{{ node.ip }}</td>
+          <td>{{ node.manager }}</td>
+          <td>{{ node.tel }}</td>
+          <td><a type="button" class="btn btn-primary btn-sm" ui-sref="root.detail({id: node._id})"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 详细</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <tm-pagination conf="paginationConf"></tm-pagination>
+</div>

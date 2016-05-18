@@ -1,0 +1,31 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h2 class="page-header">管理列表</h2>
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+      <input type="search" ng-model="ac.searchText" class="form-control" placeholder="请输入系统名称或ip地址进行查找" aria-describedby="sizing-addon2">
+    </div>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>系统名称</th>
+          <th>ip地址</th>
+          <th>负责人</th>
+          <th>联系电话</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="node in ac.nodes">
+          <th scope="row">{{ (paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1 }}</th>
+          <td>{{ node.name }}</td>
+          <td>{{ node.ip }}</td>
+          <td>{{ node.manager }}</td>
+          <td>{{ node.tel }}</td>
+          <td><a type="button" class="btn btn-danger btn-sm" ui-sref="root.admin.edit({id: node._id})"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改</a>&nbsp;<button type="button" class="btn btn-danger btn-sm" ng-click="ac.remove(node)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除</button></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <tm-pagination conf="paginationConf"></tm-pagination>
+</div>

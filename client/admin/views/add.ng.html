@@ -1,0 +1,27 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h2 class="page-header">增加系统</h2>
+    <form ng-submit="save(node); node='';">
+        <div class="form-group">
+            <label>系统名称</label>
+            <input ng-model="node.name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>ip地址</label>
+            <input ng-model="node.ip" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>负责人</label>
+            <input ng-model="node.manager" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>联系电话</label>
+            <input ng-model="node.tel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>简介</label>
+            <textarea ng-model="node.description" class="form-control" rows="6"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+    
+</div>
